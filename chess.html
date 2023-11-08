@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+</head>
+<style>
+    .board{
+        display: grid;
+        background-color: antiquewhite;
+        grid-template-columns: repeat(8,75px);
+        grid-template-rows: repeat(8,75px);
+    }
+    .ch{
+        border: 1px solid;
+        border-color: black;
+    }
+    i{
+        font-size: 50px;
+    }
+    .black{
+        color: white;
+        text-align: center;
+    }
+    .white{
+        text-align: center;
+    }
+    /* .ch{
+        background-color: black;
+    } */
+</style>
+<body>
+    <div class="board">
+    <div class="ch ch57">57<i class="white fa-solid fa-chess-rook" ></i></div>
+    <div class="ch ch58">58<i class="black fa-solid fa-chess-knight" draggable="true"></i></div>
+    <div class="ch ch59">59<i class="white fa-solid fa-chess-bishop"></i></div>
+    <div class="ch ch60">60<i class="black fa-solid fa-chess-king"></i></div>
+    <div class="ch ch61">61<i class="white fa-solid fa-chess-queen"></i></div>
+    <div class="ch ch62">62<i class="black fa-solid fa-chess-bishop"></i></div>
+    <div class="ch ch63">63<i class="white fa-solid fa-chess-knight"></i></div>
+    <div class="ch ch64">64<i class="black fa-solid fa-chess-rook"></i></div>
+    <div class="ch ch56">56<i class="black fa-solid fa-chess-pawn"></i></div>
+    <div class="ch ch55">55<i class="white fa-solid fa-chess-pawn"></i></div>
+    <div class="ch ch54">54<i class="black fa-solid fa-chess-pawn"></i></div>
+    <div class="ch ch53">53<i class="white fa-solid fa-chess-pawn"></i></div>
+    <div class="ch ch52">52<i class="black fa-solid fa-chess-pawn"></i></div>
+    <div class="ch ch51">51<i class="white fa-solid fa-chess-pawn"></i></div>
+    <div class="ch ch50">50<i class="black fa-solid fa-chess-pawn"></i></div>
+    <div class="ch ch49">49<i class="white fa-solid fa-chess-pawn"></i></div>
+    <div class="ch ch41">41</div>
+    <div class="ch ch42">42</div>
+    <div class="ch ch43">43</div>
+    <div class="ch ch44">44</div>
+    <div class="ch ch45">45</div>
+    <div class="ch ch46">46</div>
+    <div class="ch ch47">47</div>
+    <div class="ch ch48">48</div>
+    <div class="ch ch40">40</div>
+    <div class="ch ch39">39</div>
+    <div class="ch ch38">38</div>
+    <div class="ch ch37">37</div>
+    <div class="ch ch36">36</div>
+    <div class="ch ch35">35</div>
+    <div class="ch ch34">34</div>
+    <div class="ch ch33">33</div>
+    <div class="ch ch25">25</div>
+    <div class="ch ch26">26</div>
+    <div class="ch ch27">27</div>
+    <div class="ch ch28">28</div>
+    <div class="ch ch29">29</div>
+    <div class="ch ch30">30</div>
+    <div class="ch ch31">31</div>
+    <div class="ch ch32">32</div>
+    <div class="ch ch24">24</div>
+    <div class="ch ch23">23</div>
+    <div class="ch ch22">22</div>
+    <div class="ch ch21">21</div>
+    <div class="ch ch20">20</div>
+    <div class="ch ch19">19</div>
+    <div class="ch ch18">18</div>
+    <div class="ch ch17">17</div>
+    <div class="ch ch9">09<i class="white p9 fa-solid fa-chess-pawn" onclick="pawn1()"></i></div>
+    <div class="ch ch10">10<i class="black fa-solid fa-chess-pawn"></i></div>
+    <div class="ch ch11">11<i class="white fa-solid fa-chess-pawn"></i></div>
+    <div class="ch ch12">12<i class="black fa-solid fa-chess-pawn"></i></div>
+    <div class="ch ch13">13<i class="white fa-solid fa-chess-pawn"></i></div>
+    <div class="ch ch14">14<i class="black fa-solid fa-chess-pawn"></i></div>
+    <div class="ch ch15">15<i class="white fa-solid fa-chess-pawn"></i></div>
+    <div class="ch ch16">16<i class="black fa-solid fa-chess-pawn"></i></div>
+    <div class="ch ch8">08<i class="black fa-solid fa-chess-rook"></i></div>
+    <div class="ch ch7">07<i class="white fa-solid fa-chess-knight"></i></div>
+    <div class="ch ch6">06<i class="black fa-solid fa-chess-bishop"></i></div>
+    <div class="ch ch5">05<i class="fa-solid fa-chess-king"></i></div>
+    <div class="ch ch4">04<i class="black fa-solid fa-chess-queen" ></i></div>
+    <div class="ch ch3">03<i class="white fa-solid fa-chess-bishop"></i></div>
+    <div class="ch ch2">02<i class="black fa-solid fa-chess-knight"></i></div>
+    <div class="ch ch1">01<i class="white fa-solid fa-chess-rook"></i></div>
+</div>
+</body>
+<script>
+//  document.getElementsByClassName('ch64')[0].style.backgroundColor="black"
+ for(let i=1;i<=64;i++){
+    console.log(i)
+        if((i%2)===0){
+            document.getElementsByClassName(`ch${i}`)[0].style.backgroundColor="black"
+            document.getElementsByClassName(`ch${i}`)[0].style.textalign="center"
+        }
+        else{
+            document.getElementsByClassName(`ch${i}`)[0].style.backgroundColor="white"
+            document.getElementsByClassName(`ch${i}`)[0].style.textalign="center"
+        }
+}
+let paw1=0
+function pawn1(){
+    document.getElementsByClassName('ch24')[0].style.backgroundColor="#9EB384"
+    document.getElementsByClassName('ch25')[0].style.backgroundColor="#9EB384"
+    let p1=document.querySelector('.p1')
+    let a=document.querySelector('.ch24')
+    let b=document.querySelector('.ch25')
+    p1.addEventListener("dragstart",function(s){
+        drop=p1.target()
+        a.addEventListener("dropover",function(s){
+            s.preventDefault()
+        })
+        a.addEventListener("drop",function(s){
+            
+        }
+    }
+}
+</script>
+</html>
+for(let j=1;j<=16;j++){
+    for(let k=17;k<=32;k++){
+    let a=document.querySelector(`.ch${j}`)
+    let b=document.querySelector(`.ch${k}`)
+    a.addEventListener("dragstart",function(s){
+        santa=s.target
+    })
+    b.addEventListener("dropover",function(s){
+        s.preventDefault()
+    })
+    b.addEventListener("drop",function(s){
+        b.appendChild(santa)
+    })
+}}
